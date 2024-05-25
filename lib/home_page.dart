@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:sniikar_store/product_card.dart';
+import 'global_variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -84,6 +83,12 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: GestureDetector(
                       onTap: () {
+                        /*
+                        setState() helps rebuild the UI i.e. If we hadn't used the setState(), changing the brand
+                        category say from 'All' to 'Nike', the changes would not have effected until you hot reload the App.
+                        But with the help of setState(), the UI automatically rebuilds itself without having to  wait for hot reload
+                        hence effecting the changes between categories upon click.
+                         */
                         setState(() {
                           selectedShoeBrand = shoeBrandFilter;
                         });
@@ -118,6 +123,19 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return ProductCard(
+                    productName: product['title'] as String,
+                    productPrice: product['price'] as double,
+                    image: product['imageUrl'] as String,
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
