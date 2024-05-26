@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sniikar_store/product_card.dart';
 import 'global_variables.dart';
@@ -132,6 +131,9 @@ class _HomePageState extends State<HomePage> {
                     productName: product['title'] as String,
                     productPrice: product['price'] as double,
                     image: product['imageUrl'] as String,
+                    cardBackgroundColor: index.isEven
+                        ? const Color.fromRGBO(200, 200, 200, 0.2)
+                        : const Color.fromRGBO(255, 255, 255, 1),
                   );
                 },
               ),

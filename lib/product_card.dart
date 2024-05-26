@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final String productName, image;
   final double productPrice;
+  final Color cardBackgroundColor;
   const ProductCard({
     super.key,
     required this.productName,
     required this.productPrice,
     required this.image,
+    required this.cardBackgroundColor,
   });
 
   @override
@@ -17,20 +19,31 @@ class ProductCard extends StatelessWidget {
     elevation but why do all that work if you can simply use a container?
      */
     return Container(
-      color: const Color.fromRGBO(255, 255, 255, 1),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        color: cardBackgroundColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            image,
-            height: 120,
+          Center(
+            child: Image.asset(
+              image,
+              height: 120,
+            ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 50),
           Text(
             productName,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 10),
-          Text('\$$productPrice'),
+          Text(
+            '\$$productPrice',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );

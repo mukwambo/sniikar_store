@@ -2,7 +2,7 @@ final products = [
   {
     'id': '0',
     'company': 'Nike',
-    'title': 'Men\'s Nike shoe',
+    'title': 'Nike shoe',
     'price': 459.99,
     'size': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/a.png'
@@ -10,7 +10,7 @@ final products = [
   {
     'id': '1',
     'company': 'Adidas',
-    'title': 'Adidas shoe',
+    'title': 'Adidas shoes',
     'price': 469.99,
     'size': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/b.png'
@@ -18,7 +18,7 @@ final products = [
   {
     'id': '2',
     'company': 'Jordan',
-    'title': 'Jordan shoe',
+    'title': 'Jordan shoes',
     'price': 649.99,
     'size': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/c.png'
