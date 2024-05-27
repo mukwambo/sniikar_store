@@ -2,9 +2,9 @@ final products = [
   {
     'id': '0',
     'company': 'Nike',
-    'title': 'Nike shoe',
+    'title': 'Nike shoes',
     'price': 459.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/a.png'
   },
   {
@@ -12,7 +12,7 @@ final products = [
     'company': 'Adidas',
     'title': 'Adidas shoes',
     'price': 469.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/b.png'
   },
   {
@@ -20,7 +20,7 @@ final products = [
     'company': 'Jordan',
     'title': 'Jordan shoes',
     'price': 649.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/c.png'
   },
   {
@@ -28,7 +28,7 @@ final products = [
     'company': 'Vans',
     'title': 'Vans shoes',
     'price': 349.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/b.png'
   },
   {
@@ -36,7 +36,7 @@ final products = [
     'company': 'Converse',
     'title': 'Converse shoes',
     'price': 399.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/a.png'
   },
   {
@@ -44,7 +44,7 @@ final products = [
     'company': 'Jordan',
     'title': 'Jordan shoes',
     'price': 449.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/c.png'
   },
   {
@@ -52,7 +52,7 @@ final products = [
     'company': 'Jordan',
     'title': 'Jordan shoes',
     'price': 449.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/a.png'
   }
 ];
@@ -63,7 +63,7 @@ final cart = [
     'company': 'Jordan',
     'title': 'Jordan shoes',
     'price': 649.99,
-    'size': [5, 6, 7, 8, 9, 10],
+    'sizes': [5, 6, 7, 8, 9, 10],
     'imageUrl': 'assets/images/d.png'
   }
 ];
