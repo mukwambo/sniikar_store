@@ -86,7 +86,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       }),
                 ),
                 const SizedBox(height: 30),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
@@ -95,7 +95,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                     ),
                   ),
-                  child: const Text(
+                  icon: const Padding(
+                    padding: EdgeInsets.only(right: 15.0),
+                    child: Icon(
+                      Icons.shopping_cart,
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                    ),
+                  ),
+                  label: const Text(
                     'Add to cart',
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
