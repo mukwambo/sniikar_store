@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sniikar_store/product_list.dart';
-import 'package:sniikar_store/wishlist_page.dart';
 
 import 'cart_page.dart';
 
