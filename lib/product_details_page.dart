@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sniikar_store/cart_Provider.dart';
 
 class ProductDetails extends StatefulWidget {
   final Map<String, Object> product;
@@ -13,6 +15,51 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int selectedSize = 0;
+
+  void onTap() {
+    /* The if statement helps check if the user has selected the shoe size,
+    if not, upon clicking the add to cart button the snackBar text is displayed,
+    otherwise the product is added to cart
+    */
+    if (selectedSize != 0) {
+      Provider.of<CartProvider>(context, listen: false).addProduct({
+        'id': widget.product['id'],
+        'company': widget.product['company'],
+        'title': widget.product['title'],
+        'price': widget.product['price'],
+        'imageUrl': widget.product['imageUrl'],
+        'size': selectedSize,
+      });
+      // Display a message to confirm that the product has been added to cart
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          duration: Duration(seconds: 2),
+          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          content: Text(
+            'Product added successfully',
+            style: TextStyle(
+              color: Colors.green,
+            ),
+          ),
+        ),
+      );
+    } else {
+      // Display a message to remind the user to select a size
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          duration: Duration(seconds: 2),
+          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          content: Text(
+            'Please select size!',
+            style: TextStyle(
+              color: Colors.red,
+            ),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +134,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
                 const SizedBox(height: 30),
                 ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: onTap,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     minimumSize: const Size(double.infinity, 50),
